@@ -3,19 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smoke Sensor Data</title>
+    <title>Forest Fire Detection</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
             text-align: center;
             padding: 50px;
+            margin: 0;
         }
         h1 {
             font-size: 3em;
+            color: #333;
+        }
+        .container {
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
         }
         .value {
             font-size: 5em;
-            color: #2ecc71;
+            color: #3498db;
+            margin: 20px 0;
+        }
+        .status-bar {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 2em;
+            background-color: #2ecc71;  /* Default: Safe */
+            transition: background-color 0.3s ease;
+        }
+        .dangerous {
+            background-color: #e74c3c;  /* Dangerous */
+        }
+        footer {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #777;
         }
     </style>
     <script>
@@ -32,7 +63,15 @@
     </script>
 </head>
 <body>
-    <h1>Smoke Sensor Value</h1>
-    <div class="value">{{ value }}</div>
+    <div class="container">
+        <h1>Status</h1>
+        <div class="value">{{ value }}</div>
+        <div class="status-bar {{ 'dangerous' if status == 'Dangerous' else '' }}">
+            {{ status }}
+        </div>
+    </div>
+    <footer>
+        Threshold: {{ threshold }} | Status: {{ status }}
+    </footer>
 </body>
 </html>
