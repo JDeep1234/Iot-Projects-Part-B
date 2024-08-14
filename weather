@@ -3,8 +3,8 @@
 #include <DHT.h>  // Include the DHT library
 
 // WiFi credentials
-const char* ssid = "Nivvi's iphone";
-const char* password = "nivvi2004";
+const char* ssid = "";
+const char* password = "";
 
 // ThingSpeak API details
 const String apiKey = "NBWRS1YV5YNT0T46"; // Replace with your ThingSpeak API key
