@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smoke Sensor Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+        }
+        .value {
+            font-size: 5em;
+            color: #2ecc71;
+        }
+    </style>
+    <script>
+        function refreshData() {
+            fetch('/')
+                .then(response => response.text())
+                .then(data => {
+                    document.open();
+                    document.write(data);
+                    document.close();
+                });
+        }
+        setInterval(refreshData, 1000);  // Refresh data every second
+    </script>
+</head>
+<body>
+    <h1>Smoke Sensor Value</h1>
+    <div class="value">{{ value }}</div>
+</body>
+</html>
