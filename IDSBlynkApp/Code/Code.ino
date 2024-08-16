@@ -73,7 +73,7 @@ void checkPIRSensor() {
     if (!lockLow && millis() - lowIn > motionPause) {
       lockLow = true;
       lowIn = millis();
-      Serial.println("Motion ended");
+      Serial.println("Detection Ended");
     }
   }
 }
