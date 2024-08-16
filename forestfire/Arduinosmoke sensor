@@ -1,0 +1,67 @@
+#include <WiFi.h>
+#include <HTTPClient.h>
+
+// WiFi credentials
+const char* ssid = "";
+const char* password = "";
+
+// Server URL (replace with your server's IP and port)
+String serverName = "http://192.168.60.126:5000/update";  // Flask server address
+
+// Sensor and LED pins
+const int smokeSensorPin = 34;
+const int ledPin = 2;  // GPIO 2 is commonly used for onboard LED on many ESP32 boards
+
+// Threshold value for the smoke sensor
+const int threshold = 2000;
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(smokeSensorPin, INPUT);
+  pinMode(ledPin, OUTPUT);  // Set the LED pin as output
+
+  // Connect to WiFi
+  WiFi.begin(ssid, password);
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting to WiFi...");
+  }
+  Serial.println("Connected to WiFi");
+}
+
+void loop() {
+  int sensorValue = analogRead(smokeSensorPin);
+  Serial.print("Sensor Value: ");
+  Serial.println(sensorValue);
+
+  // Check if the sensor value is above the threshold
+  if (sensorValue > threshold) {
+    digitalWrite(ledPin, HIGH);  // Turn the LED on
+  } else {
+    digitalWrite(ledPin, LOW);   // Turn the LED off
+  }
+
+  if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+
+    http.begin(serverName);
+
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+    String httpRequestData = "value=" + String(sensorValue);
+    int httpResponseCode = http.POST(httpRequestData);
+
+    if (httpResponseCode > 0) {
+      String response = http.getString();
+      Serial.println("Server Response: " + response);
+    } else {
+      Serial.print("Error on sending POST: ");
+      Serial.println(httpResponseCode);
+    }
+
+    http.end();
+  } else {
+    Serial.println("WiFi Disconnected");
+  }
+
+  delay(1000);
+}
