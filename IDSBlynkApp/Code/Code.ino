@@ -61,8 +61,8 @@ void checkPIRSensor() {
 
     if (lockLow) {
       lockLow = false;
-      Serial.println("Motion detected");
-      Blynk.notify("Motion detected!");
+      Serial.println("Intrusion detected🚨❗");
+      Blynk.notify("Intrusion detected!🚨❗");
     }
   }
 
