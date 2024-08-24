@@ -9,12 +9,12 @@ const int ledPin = 4;        // Digital pin for LED
 const int moistureThreshold = 3600;
 
 // Wi-Fi credentials
-const char* ssid = "Hello";            // Replace with your Wi-Fi SSID
-const char* password = "12345678";    // Replace with your Wi-Fi password
+const char* ssid = "Name";            // Replace with your Wi-Fi SSID
+const char* password = "0123456789";    // Replace with your Wi-Fi password
 
 // ThingSpeak settings
 const char* server = "http://api.thingspeak.com/update";
-const char* apiKey = "NXIMXONGXD4AV98C";       // Replace with your ThingSpeak Write API Key
+const char* apiKey = "ORE7XXI6JAKYF2GR";       // Replace with your ThingSpeak Write API Key
 
 void setup() {
   // Initialize serial communication for debugging
