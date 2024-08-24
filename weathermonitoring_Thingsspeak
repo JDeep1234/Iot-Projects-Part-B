@@ -3,16 +3,16 @@
 #include <DHT.h>  // Include the DHT library
 
 // WiFi credentials
-const char* ssid = "";
-const char* password = "";
+const char* ssid = "Name";
+const char* password = "0123456789";
 
 // ThingSpeak API details
-const String apiKey = "NBWRS1YV5YNT0T46"; // Replace with your ThingSpeak API key
+const String apiKey = "VJEGN11SCI1BIWMN"; // Replace with your ThingSpeak API key
 const String thingSpeakURL = "http://api.thingspeak.com/update";
 
 // DHT sensor setup
-#define DHTPIN 4
-#define DHTTYPE DHT22
+#define DHTPIN 27
+#define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
 void setup() {
