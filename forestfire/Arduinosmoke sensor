@@ -2,18 +2,18 @@
 #include <HTTPClient.h>
 
 // WiFi credentials
-const char* ssid = "";
-const char* password = "";
+const char* ssid = "Name";
+const char* password = "0123456789";
 
 // Server URL (replace with your server's IP and port)
-String serverName = "http://192.168.60.126:5000/update";  // Flask server address
+String serverName = "http://192.168.25.126:5000/update";  // Flask server address
 
 // Sensor and LED pins
 const int smokeSensorPin = 34;
 const int ledPin = 2;  // GPIO 2 is commonly used for onboard LED on many ESP32 boards
 
 // Threshold value for the smoke sensor
-const int threshold = 2000;
+const int threshold = 3000;
 
 void setup() {
   Serial.begin(9600);
