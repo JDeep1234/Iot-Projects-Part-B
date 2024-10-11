@@ -1,4 +1,4 @@
-# IoT Projects with RV IoT Board
+# IoT Projects with Part-B
 
 This repository contains IoT projects developed using the RV IoT Board. Each project follows the **IoT Design Methodology**, covering the purpose, domain, and process specifications, service levels, and more.
 
