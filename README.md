@@ -1,4 +1,4 @@
-# IoT Projects with Part-B
+# IoT Projects Part-B
 
 Each project follows the **IoT Design Methodology**, covering the purpose, domain, and process specifications, service levels, and more.
 
