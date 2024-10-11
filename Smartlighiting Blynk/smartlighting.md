@@ -54,10 +54,9 @@ This project implements a Smart Lighting system that dynamically adjusts lightin
 
 ### **Step 9: Device & Component Integration**
 - **Components**:
-  - PIR motion sensor.
   - LDR sensor.
   - Dimmable LED.
-  - Communication module (for remote access).
+  - Esp 32
 - **Integration**: All components are integrated through GPIO pins, using Wi-Fi for remote access.
 
 ### **Step 10: Application Development**
