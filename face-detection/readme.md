@@ -1,5 +1,5 @@
 
-# Home Security - Face Detection
+# Home Security - Face Detection using Flask and ML
 
 ### Installation
 
