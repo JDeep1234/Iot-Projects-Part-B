@@ -10,7 +10,7 @@ Each project follows the **IoT Design Methodology**, covering the purpose, domai
 5. Smart Irrigation
 6. Forest Fire Detection
 
-Each project follows a detailed IoT Design Methodology, making use of various sensors, communication protocols, and the RV IoT Board’s capabilities.
+
 
 ## **IoT Design Methodology Overview**
 1. **Step 1**: Purpose & Requirements Specification
