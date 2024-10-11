@@ -12,7 +12,6 @@ This project implements a Smart Lighting system that dynamically adjusts lightin
   - Remote control via a mobile app or web interface.
 
 ### **Step 2: Process Specification**
-- Detect occupancy using PIR motion sensors.
 - Monitor ambient light with LDR sensors.
 - Control lighting intensity through connected dimmable LEDs.
 - Provide a user interface for manual control and override via an app.
@@ -32,7 +31,6 @@ This project implements a Smart Lighting system that dynamically adjusts lightin
   - Light intensity: Integer (0-100%).
 
 ### **Step 5: Service Specifications**
-- **Occupancy Detection Service**: Monitor and notify system when occupancy is detected.
 - **Ambient Light Monitoring Service**: Continuously monitor light levels and adjust LED intensity.
 - **Manual Control Service**: Allow manual override via a mobile/web interface.
 
