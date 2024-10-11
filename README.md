@@ -3,12 +3,12 @@
 This repository contains IoT projects developed using the RV IoT Board. Each project follows the **IoT Design Methodology**, covering the purpose, domain, and process specifications, service levels, and more.
 
 ## **Projects Overview**
-1. **[Smart Lighting](./SmartLighting/README.md)**
-2. **[Intrusion Detection System](./IntrusionDetection/README.md)**
-3. **[Smart Parking](./SmartParking/README.md)**
-4. **[Weather Monitoring and Reporting Bot](./WeatherBot/README.md)**
-5. **[Smart Irrigation](./SmartIrrigation/README.md)**
-6. **[Forest Fire Detection](./ForestFireDetection/README.md)**
+1. Smart Lighting
+2. Intrusion Detection System
+3. Smart Parking
+4. Weather Monitoring and Reporting Bot
+5. Smart Irrigation
+6. Forest Fire Detection
 
 Each project follows a detailed IoT Design Methodology, making use of various sensors, communication protocols, and the RV IoT Board’s capabilities.
 
@@ -25,6 +25,3 @@ Each project follows a detailed IoT Design Methodology, making use of various se
 10. **Step 10**: Application Development
 
 Please refer to each project's individual README for specific documentation, design methodology, and implementation details.
-
----
-
