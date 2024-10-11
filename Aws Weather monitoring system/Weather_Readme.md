@@ -8,7 +8,6 @@ This project implements a Weather Monitoring system that collects and reports en
 - **Purpose**: To monitor and report real-time weather data to users and provide historical data for analysis.
 - **Requirements**:
   - Use DHT11/DHT22 sensors for temperature and humidity measurement.
-  - Use BMP180 sensor for atmospheric pressure measurement.
   - Send data to AWS IoT or ThingSpeak for real-time data visualization.
   - Allow users to access weather data through a web interface.
 
@@ -76,16 +75,11 @@ This project implements a Weather Monitoring system that collects and reports en
    - GND to GND
    - DATA to any GPIO pin (e.g., GPIO 23)
 
-2. Connect the BMP180 sensor to the ESP32:
-   - VCC to 3.3V
-   - GND to GND
-   - SDA to GPIO 21 (or configured SDA pin)
-   - SCL to GPIO 22 (or configured SCL pin)
+
 
 ### **Software Setup**
 1. **Install the Arduino IDE**: Make sure you have the latest version.
 2. **Install ESP32 Board**: Follow the [ESP32 board installation guide](https://docs.espressif.com/projects/arduino-esp32/en/latest/installing.html).
 3. **Install Required Libraries**:
    - DHT sensor library: `DHT sensor library` by Adafruit.
-   - BMP180 sensor library: `Adafruit BMP085 Unified`.
    - HTTP client library (if using HTTP for ThingSpeak or AWS IoT).
