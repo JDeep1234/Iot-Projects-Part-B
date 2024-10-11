@@ -1,6 +1,6 @@
 # Smart Lighting System
 
-This project implements a Smart Lighting system using the RV IoT Board, which dynamically adjusts lighting based on environmental conditions and user activity.
+This project implements a Smart Lighting system that dynamically adjusts lighting based on environmental conditions and user activity.
 
 ## **IoT Design Methodology**
 
@@ -38,7 +38,7 @@ This project implements a Smart Lighting system using the RV IoT Board, which dy
 
 ### **Step 6: IoT Level Specification**
 - **IoT Level**: Level 2 (Sensing and Actuation).
-- Sensors (PIR, LDR) provide input, and the system controls output (LEDs).
+- Sensors provide input, and the system controls output (LEDs).
 
 ### **Step 7: Functional View Specification**
 - **Functions**:
@@ -54,17 +54,12 @@ This project implements a Smart Lighting system using the RV IoT Board, which dy
 
 ### **Step 9: Device & Component Integration**
 - **Components**:
-  - RV IoT Board.
   - PIR motion sensor.
   - LDR sensor.
   - Dimmable LED.
   - Communication module (for remote access).
-- **Integration**: All components are integrated through the RV IoT Board's GPIO pins, using Wi-Fi for remote access.
+- **Integration**: All components are integrated through GPIO pins, using Wi-Fi for remote access.
 
 ### **Step 10: Application Development**
-- **Mobile App**: A simple mobile app built using React Native to allow manual control and monitor sensor data.
-- **Backend**: A Flask backend handles communication between the app and the IoT system.
-
-## **Technology Stack**
-- **Hardware**: RV IoT Board, PIR sensor, LDR sensor, Dimmable LED.
-- **Software**: C/C++ for IoT board, React Native for the app, Flask for the backend.
+- **Mobile App**: A simple mobile app built using Blynk to allow manual control and monitor sensor data.
+  
