@@ -59,4 +59,72 @@ This project implements a Smart Lighting system that dynamically adjusts lightin
 
 ### **Step 10: Application Development**
 - **Mobile App**: A simple mobile app built using Blynk to allow manual control and monitor sensor data.
+
+  # Setting Up Datastreams in Blynk for ESP32
+
+## 1. Create a Blynk Account and Project
+- Go to the **[Blynk IoT platform](https://blynk.io/)**.
+- Create an account or log in.
+- Create a new project and name it.
+- Select **ESP32** as your hardware.
+- Copy the **Authentication Token** generated for the project (you will need this in your code).
+
+## 2. Create Datastreams
+- In the **Blynk Console**, select your project.
+- Click on **"Datastreams"** in the sidebar or while editing a device.
+- Select **"New Datastream"**.
+
+## 3. Select Datastream Type
+- Choose the type of datastream based on your needs:
+  - **Virtual Pin**: Used for communication between hardware and the Blynk platform via virtual pins.
+  - **Digital Pin**: Direct control of hardware digital pins.
+  - **Analog Pin**: Direct control of hardware analog pins.
+  
+  For this project, select **Virtual Pin** for the LDR and LED.
+
+## 4. Configure Datastream for the LDR (Sensor Input)
+- **Type**: Virtual Pin
+- **Pin**: V5 (to match your code)
+- **Label**: LDR Sensor
+- **Data Type**: Integer
+- **Min/Max Values**: 0 to 4095 (typical range for ESP32 ADC)
+- **Units**: (optional) lux or raw value
+
+## 5. Configure Datastream for the LED (Output Control)
+- **Type**: Virtual Pin
+- **Pin**: V0 (to match your code)
+- **Label**: LED Control
+- **Data Type**: Integer
+- **Min/Max Values**: 0 (LED OFF) and 1 (LED ON)
+- **Widget**: Button or Switch (for controlling the LED)
+
+## 6. Configure Data Visualization in the Dashboard
+- Go to your project’s **Dashboard** in the Blynk Console.
+- Add a **Chart** or **Gauge** widget to visualize LDR sensor readings:
+  - **Link**: Virtual Pin V5
+  - **Data Range**: 0–4095
+- Add a **Button** or **Switch** widget to control the LED:
+  - **Link**: Virtual Pin V0
+
+## 7. Deploy and Run the Project
+- Make sure your ESP32 code includes the correct **BLYNK_AUTH_TOKEN**, WiFi credentials, and virtual pins.
+- Upload the code to your ESP32.
+- Once the ESP32 is running, the LDR readings will be sent to Blynk, and you can control the LED from the dashboard.
+
+---
+
+## Summary of Datastreams:
+### LDR Datastream:
+- **Type**: Virtual Pin
+- **Pin**: V5
+- **Data Type**: Integer
+- **Min/Max**: 0–4095
+- **Widget**: Chart/Gauge (for visualizing LDR values)
+
+### LED Control Datastream:
+- **Type**: Virtual Pin
+- **Pin**: V0
+- **Data Type**: Integer (0 = OFF, 1 = ON)
+- **Widget**: Button/Switch (for controlling the LED)
+
   
