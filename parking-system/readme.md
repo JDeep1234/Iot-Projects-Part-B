@@ -120,3 +120,65 @@ This project implements a Smart Parking system that utilizes IR sensors to detec
    ```bash
    sudo apt update
    sudo apt install python3 python3-flask
+# Setting Up Datastreams in Blynk for IR Sensors with ESP32
+
+## 1. Create a Blynk Account and Project
+- Go to the **[Blynk IoT platform](https://blynk.io/)**.
+- Create an account or log in.
+- Create a new project and name it (e.g., "IR Sensor Project").
+- Select **ESP32** as your hardware.
+- Copy the **Authentication Token** generated for the project.
+
+## 2. Create Datastreams
+- In the **Blynk Console**, select your project.
+- Click on **"Datastreams"** in the sidebar or while editing a device.
+- Select **"New Datastream"**.
+
+## 3. Select Datastream Type
+- Choose **Virtual Pin** to create datastreams for the IR sensors.
+
+## 4. Configure Datastream for IR Sensor 1
+- **Type**: Virtual Pin
+- **Pin**: V4 (to match your code)
+- **Label**: IR Sensor 1
+- **Data Type**: Integer
+- **Min/Max Values**: 0 (No object detected) to 1 (Object detected)
+- **Widget**: LED or Indicator widget for visualizing IR sensor status.
+
+## 5. Configure Datastream for IR Sensor 2
+- **Type**: Virtual Pin
+- **Pin**: V3 (to match your code)
+- **Label**: IR Sensor 2
+- **Data Type**: Integer
+- **Min/Max Values**: 0 (No object detected) to 1 (Object detected)
+- **Widget**: LED or Indicator widget for visualizing IR sensor status.
+
+## 6. Configure Data Visualization in the Dashboard
+- Go to your project’s **Dashboard** in the Blynk Console.
+- Add a **LED Widget** to visualize the status of **IR Sensor 1**:
+  - **Link** it to **Virtual Pin V4**.
+  - Set the LED color as per your preference (e.g., Green for detection, Red for no detection).
+  
+- Add another **LED Widget** for **IR Sensor 2**:
+  - **Link** it to **Virtual Pin V3**.
+
+## 7. Deploy and Run the Project
+- Make sure your ESP32 code includes the correct **BLYNK_AUTH_TOKEN**, WiFi credentials, and virtual pins.
+- Upload the code to your ESP32.
+- Once the ESP32 is running, IR sensor readings will be sent to Blynk, and the LED widgets will indicate the sensor status in real time.
+
+---
+
+## Summary of Datastreams:
+### IR Sensor 1 Datastream:
+- **Type**: Virtual Pin
+- **Pin**: V4
+- **Data Type**: Integer (0 = No object, 1 = Object detected)
+- **Widget**: LED (for visualizing IR sensor status)
+
+### IR Sensor 2 Datastream:
+- **Type**: Virtual Pin
+- **Pin**: V3
+- **Data Type**: Integer (0 = No object, 1 = Object detected)
+- **Widget**: LED (for visualizing IR sensor status)
+
